@@ -62,7 +62,7 @@ public class ProductService {
 
 
     public ProductResponseDTO update(ProductResponseDTO data){
-        Product prod = productRepository.findById(data.id()).orElseThrow(() -> new ObjectNotFoundException("Product not found"));
+        productRepository.findById(data.id()).orElseThrow(() -> new ObjectNotFoundException("Product not found"));
 
         Product productObj = new Product();
         productObj.setId(data.id());
